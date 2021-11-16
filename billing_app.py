@@ -52,7 +52,7 @@ The burning qustion is how much am I going to pay in month 2 ?
 
 image = Image.open('img/rain.jpg')
 
-st.image(image, use_column_width=True)
+st.image(image, use_column_width=False)
 st.sidebar.header('User Input Parameters')
 st.sidebar.markdown("Play around with the features and see what you'll pay in month 2")
 name = st.sidebar.text_input("First name")
@@ -79,7 +79,7 @@ def get_key(val):
     return "key doesn't exist"
 month = get_key(int(month))
 
-st.write(month)
+#st.write(month)
 
 mon1,mon2,mon3 = get_next_month(month)
 year = int(str(date).split("-")[0])
