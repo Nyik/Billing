@@ -73,7 +73,7 @@ month = str(date).split("-")[1]
 what_day_in_month = int(str(date).split("-")[2])
 
 st.write(month)
-st.write(day)
+st.write(what_day_in_month)
 
 def get_key(val):
     for key, value in months.items():
@@ -86,7 +86,7 @@ month = get_key(int(month))
 st.write(month)
 
 mon1,mon2,mon3 = get_next_month(month)
-year = month = str(date).split("-")[0]
+year = str(date).split("-")[0]
 days = months[month.lower()]
 num_days = monthrange(year, days)[1]
 bill,credit = get_amount(what_day_in_month, num_days, packages[what_package_did_you_buy])
