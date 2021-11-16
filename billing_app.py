@@ -65,7 +65,7 @@ image = Image.open('img/rain.jpg')
 
 st.image(image, use_column_width=True)
 st.sidebar.header('User Input Parameters')
-st.sidebar.markdown('Play around with the features and see what you'll pay in month 2')
+st.sidebar.markdown("Play around with the features and see what you'll pay in month 2")
 name = st.sidebar.text_input("First name")
 date = st.sidebar.date_input("When did you get activated")
 what_package_did_you_buy = st.sidebar.radio("What package do you plan on buying",packages.keys())
