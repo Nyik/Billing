@@ -102,9 +102,13 @@ mycolors = ["#0080FF", "#66B2FF"]
 y = [credit , bill]
 mylabels = ["Credit", "Amount To Be Paid"]
 myexplode = [0.2, 0]
-# plt.title("Month 2 Bill ")
+#plt.title("Month 2 Bill ")
 a = plt.pie(y, labels = mylabels, explode = myexplode,colors = mycolors,autopct=make_autopct(y))
-st.pyplot(a)
+
+fig1, ax1 = plt.subplots()
+ax1.pie(y, explode=myexplode, labels=labels, autopct=autopct=make_autopct(y))
+        
+st.pyplot(ax1)
 plt.show() 
 st.write(f"hi {name}, ")
 st.write()
