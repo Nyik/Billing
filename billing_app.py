@@ -26,7 +26,8 @@ y = [7, 13, 24]
 
 #create subplots
 ax[0].plot(x, y, color='red')
-ax[1].plot(x, y, color='blue')   
+ax[1].plot(x, y, color='blue')  
+st.pyplot(fig) 
 def get_next_month(mon):
     if mon.lower() == "oct":
         mon1= "nov"
