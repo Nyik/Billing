@@ -16,18 +16,7 @@ packages = {
     "5. 4G For Phones":300,
     "6. 4G Unlimited Any Device":479
 }
-#define subplots
-fig, ax = plt.subplots(1, 2, gridspec_kw={'width_ratios': [3, 1]})
-fig.tight_layout()
 
-#define data
-x = [1, 2, 3]
-y = [7, 13, 24]
-
-#create subplots
-ax[0].plot(x, y, color='red')
-ax[1].plot(x, y, color='blue')  
-st.pyplot(fig) 
 def get_next_month(mon):
     if mon.lower() == "oct":
         mon1= "nov"
@@ -149,9 +138,18 @@ if what_package_did_you_buy ==  "4. 4G Unlimited Off Peak":
     mylabels = ["Credit", "Amount To Be Paid"]
     myexplode = [0.2, 0]
     # plt.title("Month 2 Bill ")
-    fig1, ax1 = plt.subplots()
-    ax1.pie(y, labels = mylabels, explode = myexplode,colors = mycolors,autopct=make_autopct(y))   
-    st.pyplot(fig1) 
+    # fig1, ax1 = plt.subplots()
+    # ax1.pie(y, labels = mylabels, explode = myexplode,colors = mycolors,autopct=make_autopct(y))   
+    # st.pyplot(fig1) 
+    size_of_groups=[1,1,1,1,1]
+    fig5, (ax3, ax4) = plt.subplots(1, 2)
+    ax3.pie(y, labels = mylabels, explode = myexplode,colors = mycolors,autopct=make_autopct(y)) 
+    ax4.pie(size_of_groups,startangle=270,explode = [0.05, 0.05, 0.05, 0.05, 0.05], colors = colors, labels = ['1GB','1GB','1GB','1GB','1GB'],counterclock=False)
+    plt.text(0, 0, f"R{gigsUsed*50}", ha='center', va='center', fontsize=42)
+    my_circle=plt.Circle( (0,0), 0.7, color='white')
+    p=plt.gcf()
+    p.gca().add_artist(my_circle)
+    st.pyplot(fig5) 
     st.write(f"hi {name}, ")
     st.write()
     st.write(f"You bought your package {what_package_did_you_buy[3:]} and it was activated on {what_day_in_month} of {month}")
@@ -169,27 +167,20 @@ if what_package_did_you_buy ==  "4. 4G Unlimited Off Peak":
     st.write(f"bill 3({mon3}): R{packages[what_package_did_you_buy]}")
 
     size_of_groups=[1,1,1,1,1]
-    fig2, ax2 = plt.subplots()
-    ax2.pie(size_of_groups,startangle=270,explode = [0.05, 0.05, 0.05, 0.05, 0.05], colors = colors, labels = ['1GB','1GB','1GB','1GB','1GB'],counterclock=False)
-    #plt.pie(size_of_groups,startangle=270,explode = [0.05, 0.05, 0.05, 0.05, 0.05], colors = colors, labels = ['1GB','1GB','1GB','1GB','1GB'],counterclock=False)
-    plt.text(0, 0, f"R{gigsUsed*50}", ha='center', va='center', fontsize=42)
-    my_circle=plt.Circle( (0,0), 0.7, color='white')
-    p=plt.gcf()
-    p.gca().add_artist(my_circle)
-    plt.title("Peak GBs")
-    st.pyplot(fig2) 
+    # fig2, ax2 = plt.subplots()
+    # ax2.pie(size_of_groups,startangle=270,explode = [0.05, 0.05, 0.05, 0.05, 0.05], colors = colors, labels = ['1GB','1GB','1GB','1GB','1GB'],counterclock=False)
+    # #plt.pie(size_of_groups,startangle=270,explode = [0.05, 0.05, 0.05, 0.05, 0.05], colors = colors, labels = ['1GB','1GB','1GB','1GB','1GB'],counterclock=False)
+    # plt.text(0, 0, f"R{gigsUsed*50}", ha='center', va='center', fontsize=42)
+    # my_circle=plt.Circle( (0,0), 0.7, color='white')
+    # p=plt.gcf()
+    # p.gca().add_artist(my_circle)
+    # plt.title("Peak GBs")
+    # st.pyplot(fig2) 
 
-    plt.show()
+    # plt.show()
 
-    st.write("Red means used")
-    st.write("Blue means not used")
+    # st.write("Red means used")
+    # st.write("Blue means not used")
     
-    fig5, (ax3, ax4) = plt.subplots(1, 2)
-    ax3.pie(y, labels = mylabels, explode = myexplode,colors = mycolors,autopct=make_autopct(y)) 
-    ax4.pie(size_of_groups,startangle=270,explode = [0.05, 0.05, 0.05, 0.05, 0.05], colors = colors, labels = ['1GB','1GB','1GB','1GB','1GB'],counterclock=False)
-    plt.text(0, 0, f"R{gigsUsed*50}", ha='center', va='center', fontsize=42)
-    my_circle=plt.Circle( (0,0), 0.7, color='white')
-    p=plt.gcf()
-    p.gca().add_artist(my_circle)
-    st.pyplot(fig5) 
+    
     
