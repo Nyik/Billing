@@ -26,8 +26,6 @@ def get_amount(dayOfpayment, numOfDays, package):
     return round(amount, 2),round(package-amount, 2)
     
 
-name = st.text_input("First name")
-
 st.write("""
 # Simple Billing Explained
 The burning qustion is how much am I going to pay in month 2 ?
