@@ -70,7 +70,7 @@ st.write(what_package_did_you_buy)
 if what_package_did_you_buy ==  "4. 4G Unlimited Off Peak":
     gigsUsed = st.sidebar.number_input("How many gigs do you plan to use in peak",max_value=5,min_value=0)
 month = str(date).split("-")[1]
-day = str(date).split("-")[2]
+day = int(str(date).split("-")[2])
 
 st.write(month)
 st.write(day)
@@ -89,6 +89,6 @@ mon1,mon2,mon3 = get_next_month(month)
 year = month = str(date).split("-")[0]
 num_days = monthrange(year, days)[1]
 
-bill,credit = get_amount(int(day), num_days, packages[what_package_did_you_buy])
+bill,credit = get_amount(what_day_in_month, num_days, packages[what_package_did_you_buy])
 
 st.write(bill,credit)
