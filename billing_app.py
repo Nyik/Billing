@@ -54,7 +54,7 @@ st.write(month)
 st.write(day)
 
 def get_key(val):
-    for key, value in my_dict.items():
+    for key, value in packages.items():
          if val == value:
              return key
  
