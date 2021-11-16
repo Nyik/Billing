@@ -39,19 +39,29 @@ st.sidebar.header('User Input Parameters')
 st.sidebar.markdown('Play around with the features and see which flower you get')
 name = st.sidebar.text_input("First name")
 date = st.sidebar.date_input("When did you get activated")
-packagez = st.sidebar.radio("What's your favorite movie genre",packages.keys())
+what_package_did_you_buy = st.sidebar.radio("What package do you plan on buying",packages.keys())
 
 st.write(name)
 st.write(date)
-st.write(packagez)
+st.write(what_package_did_you_buy)
 
-st.write("This is what should print")
+if what_package_did_you_buy ==  "4. 4G Unlimited Off Peak":
+    gigsUsed = st.sidebar.number_input("How many gigs do you plan to use in peak",max_value=5,min_value=0)
+month = str(date).split("-")[1]
+day = str(date).split("-")[2]
 
-genre = st.radio(
-     "What's your favorite movie genre",
-     ('Comedy', 'Drama', 'Documentary'))
+st.write(month)
+st.write(day)
 
-if genre == 'Comedy':
-    st.write('You selected comedy.')
-else:
-    st.write("You didn't select comedy.")
+def get_key(val):
+    for key, value in my_dict.items():
+         if val == value:
+             return key
+ 
+    return "key doesn't exist"
+month = get_key(int(month))
+
+st.write(month)
+#bill,credit = get_amount(what_day_in_month, num_days, packages[what_package_did_you_buy])
+
+#st.write(bill,credit)
