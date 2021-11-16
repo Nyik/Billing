@@ -16,18 +16,6 @@ packages = {
     "5. 4G For Phones":300,
     "6. 4G Unlimited Any Device":479
 }
-
-# Pie chart, where the slices will be ordered and plotted counter-clockwise:
-labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
-sizes = [15, 30, 45, 10]
-explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
-
-fig1, ax1 = plt.subplots()
-ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
-        shadow=True, startangle=90)
-ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-
-st.pyplot(fig1)
     
 def get_next_month(mon):
     if mon.lower() == "oct":
@@ -119,8 +107,8 @@ myexplode = [0.2, 0]
 fig1, ax1 = plt.subplots()
 ax1.pie(y, labels = mylabels, explode = myexplode,colors = mycolors,autopct=make_autopct(y))
         
-st.pyplot(ax1)
-plt.show() 
+st.pyplot(fig1)
+#plt.show() 
 st.write(f"hi {name}, ")
 st.write()
 st.write(f"You bought your package {what_package_did_you_buy[3:]} and it was activated on {what_day_in_month} of {month}")
@@ -151,8 +139,9 @@ y = [credit , bill]
 mylabels = ["Credit", "Amount To Be Paid"]
 myexplode = [0.2, 0]
 # plt.title("Month 2 Bill ")
-plt.pie(y, labels = mylabels, explode = myexplode,colors = mycolors,autopct=make_autopct(y))
-plt.show() 
+fig1, ax1 = plt.subplots()
+ax1.pie(y, labels = mylabels, explode = myexplode,colors = mycolors,autopct=make_autopct(y))   
+st.pyplot(fig1) 
 st.write(f"hi {name}, ")
 st.write()
 st.write(f"You bought your package {what_package_did_you_buy[3:]} and it was activated on {what_day_in_month} of {month}")
