@@ -106,7 +106,7 @@ myexplode = [0.2, 0]
 a = plt.pie(y, labels = mylabels, explode = myexplode,colors = mycolors,autopct=make_autopct(y))
 
 fig1, ax1 = plt.subplots()
-ax1.pie(y, explode=myexplode, labels=labels, autopct=autopct=make_autopct(y))
+ax1.pie(y, explode=myexplode, labels=labels, autopct=make_autopct(y))
         
 st.pyplot(ax1)
 plt.show() 
