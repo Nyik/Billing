@@ -17,9 +17,9 @@ packages = {
     "6. 4G Unlimited Any Device":479
 }
 
-def print_hi(name):
-    print(f'Hi, {name}')
-    print(1 / 10)
+def st.write_hi(name):
+    st.write(f'Hi, {name}')
+    st.write(1 / 10)
     
 def get_next_month(mon):
     if mon.lower() == "oct":
@@ -106,20 +106,21 @@ y = [credit , bill]
 mylabels = ["Credit", "Amount To Be Paid"]
 myexplode = [0.2, 0]
 # plt.title("Month 2 Bill ")
-plt.pie(y, labels = mylabels, explode = myexplode,colors = mycolors,autopct=make_autopct(y))
+a = plt.pie(y, labels = mylabels, explode = myexplode,colors = mycolors,autopct=make_autopct(y))
+st.pyplot(a)
 plt.show() 
-print(f"hi {name}, ")
-print()
-print(f"You bought your package {what_package_did_you_buy[3:]} and it was activated on {what_day_in_month} of {month}")
-print()
-print("We only charge from the day of activation")
-print(f"month 1 :R{packages[what_package_did_you_buy]}")
-print(f"month 2 :R{bill} is the amount you owe and the credit({what_day_in_month} DAYS) you have is R{credit} = R{packages[what_package_did_you_buy]}")
-print(f"month 3 :R{packages[what_package_did_you_buy]}")
-print()
-print(f"bill 1({mon1}): R0")
-print(f"bill 2({mon2}): R{bill}")
-print(f"bill 3({mon3}): R{packages[what_package_did_you_buy]}")
+st.write(f"hi {name}, ")
+st.write()
+st.write(f"You bought your package {what_package_did_you_buy[3:]} and it was activated on {what_day_in_month} of {month}")
+st.write()
+st.write("We only charge from the day of activation")
+st.write(f"month 1 :R{packages[what_package_did_you_buy]}")
+st.write(f"month 2 :R{bill} is the amount you owe and the credit({what_day_in_month} DAYS) you have is R{credit} = R{packages[what_package_did_you_buy]}")
+st.write(f"month 3 :R{packages[what_package_did_you_buy]}")
+st.write()
+st.write(f"bill 1({mon1}): R0")
+st.write(f"bill 2({mon2}): R{bill}")
+st.write(f"bill 3({mon3}): R{packages[what_package_did_you_buy]}")
 
 
 st.header("If UOP")
@@ -140,21 +141,21 @@ myexplode = [0.2, 0]
 # plt.title("Month 2 Bill ")
 plt.pie(y, labels = mylabels, explode = myexplode,colors = mycolors,autopct=make_autopct(y))
 plt.show() 
-print(f"hi {name}, ")
-print()
-print(f"You bought your package {what_package_did_you_buy[3:]} and it was activated on {what_day_in_month} of {month}")
-print()
-print("We only charge from the day of activation")
-# print(f"month 1 :R{packages[what_package_did_you_buy]}")
-# print(f"month 2 :R{bill} is the amount you owe and the credit({what_day_in_month} DAYS) you have is R{credit} = R{packages[what_package_did_you_buy]}")
-print()
+st.write(f"hi {name}, ")
+st.write()
+st.write(f"You bought your package {what_package_did_you_buy[3:]} and it was activated on {what_day_in_month} of {month}")
+st.write()
+st.write("We only charge from the day of activation")
+# st.write(f"month 1 :R{packages[what_package_did_you_buy]}")
+# st.write(f"month 2 :R{bill} is the amount you owe and the credit({what_day_in_month} DAYS) you have is R{credit} = R{packages[what_package_did_you_buy]}")
+st.write()
 if gigsUsed >0 :
-    print(f"** BUT because you used {gigsUsed}GBs in peak, at R50/GB you owe an extra R{gigsUsed*50} so your total to be paid is R{round(bill+(gigsUsed*50),2)}")
-# print(f"month 3 :R{packages[what_package_did_you_buy]}")
-print()
-print(f"bill 1({mon1}): R0 *you paid upfront")
-print(f"bill 2({mon2}): R{round(bill,2)}**BUT you used {gigsUsed}GBs in peak, at R50 per GB you owe an extra R{gigsUsed*50} so your total to be paid is R{round(bill+(gigsUsed*50),2)}")
-print(f"bill 3({mon3}): R{packages[what_package_did_you_buy]}")
+    st.write(f"** BUT because you used {gigsUsed}GBs in peak, at R50/GB you owe an extra R{gigsUsed*50} so your total to be paid is R{round(bill+(gigsUsed*50),2)}")
+# st.write(f"month 3 :R{packages[what_package_did_you_buy]}")
+st.write()
+st.write(f"bill 1({mon1}): R0 *you paid upfront")
+st.write(f"bill 2({mon2}): R{round(bill,2)}**BUT you used {gigsUsed}GBs in peak, at R50 per GB you owe an extra R{gigsUsed*50} so your total to be paid is R{round(bill+(gigsUsed*50),2)}")
+st.write(f"bill 3({mon3}): R{packages[what_package_did_you_buy]}")
 
 size_of_groups=[1,1,1,1,1]
 
@@ -166,5 +167,5 @@ p.gca().add_artist(my_circle)
 plt.title("Peak GBs")
 plt.show()
 
-print("Red means used")
-print("Blue means not used")
+st.write("Red means used")
+st.write("Blue means not used")
