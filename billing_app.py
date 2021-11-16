@@ -87,8 +87,8 @@ st.write(month)
 
 mon1,mon2,mon3 = get_next_month(month)
 year = month = str(date).split("-")[0]
+days = months[month.lower()]
 num_days = monthrange(year, days)[1]
-
 bill,credit = get_amount(what_day_in_month, num_days, packages[what_package_did_you_buy])
 
 st.write(bill,credit)
