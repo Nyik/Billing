@@ -159,12 +159,15 @@ st.write(f"bill 2({mon2}): R{round(bill,2)}**BUT you used {gigsUsed}GBs in peak,
 st.write(f"bill 3({mon3}): R{packages[what_package_did_you_buy]}")
 
 size_of_groups=[1,1,1,1,1]
-
-plt.pie(size_of_groups,startangle=270,explode = [0.05, 0.05, 0.05, 0.05, 0.05], colors = colors, labels = ['1GB','1GB','1GB','1GB','1GB'],counterclock=False)
+fig2, ax2 = plt.subplots()
+ax2.pie(size_of_groups,startangle=270,explode = [0.05, 0.05, 0.05, 0.05, 0.05], colors = colors, labels = ['1GB','1GB','1GB','1GB','1GB'],counterclock=False)
+#plt.pie(size_of_groups,startangle=270,explode = [0.05, 0.05, 0.05, 0.05, 0.05], colors = colors, labels = ['1GB','1GB','1GB','1GB','1GB'],counterclock=False)
 plt.text(0, 0, f"R{gigsUsed*50}", ha='center', va='center', fontsize=42)
 my_circle=plt.Circle( (0,0), 0.7, color='white')
 p=plt.gcf()
 p.gca().add_artist(my_circle)
+
+st.pyplot(fig1) 
 plt.title("Peak GBs")
 plt.show()
 
