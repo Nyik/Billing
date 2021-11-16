@@ -92,3 +92,79 @@ num_days = monthrange(year, days)[1]
 bill,credit = get_amount(what_day_in_month, num_days, packages[what_package_did_you_buy])
 
 st.write(bill,credit)
+
+mycolors = [ "#0080FF", "#66B2FF"]
+def make_autopct(values):
+    def my_autopct(pct):
+        total = sum(values)
+        val = int(round(pct*total/100.0))
+        return 'R{v:d}'.format(p=pct,v=val)
+    return my_autopct
+    
+mycolors = ["#0080FF", "#66B2FF"]
+y = [credit , bill]
+mylabels = ["Credit", "Amount To Be Paid"]
+myexplode = [0.2, 0]
+# plt.title("Month 2 Bill ")
+plt.pie(y, labels = mylabels, explode = myexplode,colors = mycolors,autopct=make_autopct(y))
+plt.show() 
+print(f"hi {name}, ")
+print()
+print(f"You bought your package {what_package_did_you_buy[3:]} and it was activated on {what_day_in_month} of {month}")
+print()
+print("We only charge from the day of activation")
+print(f"month 1 :R{packages[what_package_did_you_buy]}")
+print(f"month 2 :R{bill} is the amount you owe and the credit({what_day_in_month} DAYS) you have is R{credit} = R{packages[what_package_did_you_buy]}")
+print(f"month 3 :R{packages[what_package_did_you_buy]}")
+print()
+print(f"bill 1({mon1}): R0")
+print(f"bill 2({mon2}): R{bill}")
+print(f"bill 3({mon3}): R{packages[what_package_did_you_buy]}")
+
+
+st.header("If UOP")
+
+# gigsUsed = 0
+colors = []
+while(len(colors)!=5):
+    if colors.count('red') != gigsUsed:
+        colors.append('red')
+    else:
+        colors.append('#66B2FF')
+# colors
+
+mycolors = ["#0080FF", "#66B2FF"]
+y = [credit , bill]
+mylabels = ["Credit", "Amount To Be Paid"]
+myexplode = [0.2, 0]
+# plt.title("Month 2 Bill ")
+plt.pie(y, labels = mylabels, explode = myexplode,colors = mycolors,autopct=make_autopct(y))
+plt.show() 
+print(f"hi {name}, ")
+print()
+print(f"You bought your package {what_package_did_you_buy[3:]} and it was activated on {what_day_in_month} of {month}")
+print()
+print("We only charge from the day of activation")
+# print(f"month 1 :R{packages[what_package_did_you_buy]}")
+# print(f"month 2 :R{bill} is the amount you owe and the credit({what_day_in_month} DAYS) you have is R{credit} = R{packages[what_package_did_you_buy]}")
+print()
+if gigsUsed >0 :
+    print(f"** BUT because you used {gigsUsed}GBs in peak, at R50/GB you owe an extra R{gigsUsed*50} so your total to be paid is R{round(bill+(gigsUsed*50),2)}")
+# print(f"month 3 :R{packages[what_package_did_you_buy]}")
+print()
+print(f"bill 1({mon1}): R0 *you paid upfront")
+print(f"bill 2({mon2}): R{round(bill,2)}**BUT you used {gigsUsed}GBs in peak, at R50 per GB you owe an extra R{gigsUsed*50} so your total to be paid is R{round(bill+(gigsUsed*50),2)}")
+print(f"bill 3({mon3}): R{packages[what_package_did_you_buy]}")
+
+size_of_groups=[1,1,1,1,1]
+
+plt.pie(size_of_groups,startangle=270,explode = [0.05, 0.05, 0.05, 0.05, 0.05], colors = colors, labels = ['1GB','1GB','1GB','1GB','1GB'],counterclock=False)
+plt.text(0, 0, f"R{gigsUsed*50}", ha='center', va='center', fontsize=42)
+my_circle=plt.Circle( (0,0), 0.7, color='white')
+p=plt.gcf()
+p.gca().add_artist(my_circle)
+plt.title("Peak GBs")
+plt.show()
+
+print("Red means used")
+print("Blue means not used")
