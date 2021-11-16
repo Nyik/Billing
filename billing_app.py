@@ -65,7 +65,7 @@ image = Image.open('img/rain.jpg')
 
 st.image(image, use_column_width=True)
 st.sidebar.header('User Input Parameters')
-st.sidebar.markdown('Play around with the features and see which flower you get')
+st.sidebar.markdown('Play around with the features and see what you'll pay in month 2')
 name = st.sidebar.text_input("First name")
 date = st.sidebar.date_input("When did you get activated")
 what_package_did_you_buy = st.sidebar.radio("What package do you plan on buying",packages.keys())
@@ -183,3 +183,13 @@ if what_package_did_you_buy ==  "4. 4G Unlimited Off Peak":
 
     st.write("Red means used")
     st.write("Blue means not used")
+    
+    fig5, (ax3, ax4) = plt.subplots(1, 2)
+    ax3.pie(y, labels = mylabels, explode = myexplode,colors = mycolors,autopct=make_autopct(y)) 
+    ax4.pie(size_of_groups,startangle=270,explode = [0.05, 0.05, 0.05, 0.05, 0.05], colors = colors, labels = ['1GB','1GB','1GB','1GB','1GB'],counterclock=False)
+    plt.text(0, 0, f"R{gigsUsed*50}", ha='center', va='center', fontsize=42)
+    my_circle=plt.Circle( (0,0), 0.7, color='white')
+    p=plt.gcf()
+    p.gca().add_artist(my_circle)
+    st.pyplot(fig5) 
+    
