@@ -59,17 +59,17 @@ name = st.sidebar.text_input("First name")
 date = st.sidebar.date_input("When did you get activated")
 what_package_did_you_buy = st.sidebar.radio("What package do you plan on buying",packages.keys())
 
-st.write(name)
-st.write(date)
-st.write(what_package_did_you_buy)
+#st.write(name)
+#st.write(date)
+#st.write(what_package_did_you_buy)
 
 if what_package_did_you_buy ==  "4. 4G Unlimited Off Peak":
     gigsUsed = st.sidebar.number_input("How many gigs do you plan to use in peak",max_value=5,min_value=0)
 month = str(date).split("-")[1]
 what_day_in_month = int(str(date).split("-")[2])
 
-st.write(month)
-st.write(what_day_in_month)
+#st.write(month)
+#st.write(what_day_in_month)
 
 def get_key(val):
     for key, value in months.items():
@@ -87,7 +87,7 @@ days = months[month.lower()]
 num_days = monthrange(year, days)[1]
 bill,credit = get_amount(what_day_in_month, num_days, packages[what_package_did_you_buy])
 
-st.write(bill,credit)
+#st.write(bill,credit)
 
 mycolors = [ "#0080FF", "#66B2FF"]
 def make_autopct(values):
@@ -166,9 +166,9 @@ plt.text(0, 0, f"R{gigsUsed*50}", ha='center', va='center', fontsize=42)
 my_circle=plt.Circle( (0,0), 0.7, color='white')
 p=plt.gcf()
 p.gca().add_artist(my_circle)
-
-st.pyplot(fig1) 
 plt.title("Peak GBs")
+st.pyplot(fig2) 
+
 plt.show()
 
 st.write("Red means used")
