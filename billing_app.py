@@ -62,6 +62,6 @@ def get_key(val):
 month = get_key(int(month))
 
 st.write(month)
-bill,credit = get_amount(what_day_in_month, num_days, packages[what_package_did_you_buy])
+bill,credit = get_amount(int(day), num_days, packages[what_package_did_you_buy])
 
 st.write(bill,credit)
