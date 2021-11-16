@@ -20,6 +20,28 @@ packages = {
 def print_hi(name):
     print(f'Hi, {name}')
     print(1 / 10)
+    
+def get_next_month(mon):
+    if mon.lower() == "oct":
+        mon1= "nov"
+        mon2= "dec"
+        mon3= "jan"
+    elif mon.lower() == "nov":
+        mon1= "dec"
+        mon2= "jan"
+        mon3= "feb"
+    elif mon.lower() == "dec":
+        mon1= "jan"
+        mon2= "feb"
+        mon3= "mar"
+    else:
+        temp = list(months)
+        idx = temp.index(month.lower())
+        mon1= temp[idx+1]
+        mon2= temp[idx+2]
+        mon3= temp[idx+3]
+        
+    return mon1,mon2,mon3
 
 def get_amount(dayOfpayment, numOfDays, package):
     amount = ((numOfDays - dayOfpayment) / numOfDays) * package
@@ -62,6 +84,11 @@ def get_key(val):
 month = get_key(int(month))
 
 st.write(month)
+
+mon1,mon2,mon3 = get_next_month(month)
+
+num_days = monthrange(year, days)[1]
+
 bill,credit = get_amount(int(day), num_days, packages[what_package_did_you_buy])
 
 st.write(bill,credit)
