@@ -17,9 +17,6 @@ packages = {
     "6. 4G Unlimited Any Device":479
 }
 
-def st.write_hi(name):
-    st.write(f'Hi, {name}')
-    st.write(1 / 10)
     
 def get_next_month(mon):
     if mon.lower() == "oct":
