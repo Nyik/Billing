@@ -39,4 +39,19 @@ st.sidebar.header('User Input Parameters')
 st.sidebar.markdown('Play around with the features and see which flower you get')
 name = st.sidebar.text_input("First name")
 date = st.sidebar.date_input("When did you get activated")
-genre = st.sidebar.radio("What's your favorite movie genre",packages.keys())
+packagez = st.sidebar.radio("What's your favorite movie genre",packages.keys())
+
+st.write(name)
+st.write(date)
+st.write(packagez)
+
+st.write("This is what should print")
+
+genre = st.radio(
+     "What's your favorite movie genre",
+     ('Comedy', 'Drama', 'Documentary'))
+
+if genre == 'Comedy':
+    st.write('You selected comedy.')
+else:
+    st.write("You didn't select comedy.")
