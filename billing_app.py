@@ -3,6 +3,7 @@ from datetime import date
 import matplotlib.pyplot as plt
 import numpy as np
 import streamlit as st
+from PIL import Image
 
 months = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6, "jul": 7, "aug": 8, "sep": 9, "oct": 10,
           "nov": 11, "dec": 12}
@@ -36,3 +37,8 @@ The burning qustion is how much am I going to pay in month 2 ?
 image = Image.open('img/rain.jpg')
 
 st.image(image, use_column_width=True)
+st.sidebar.header('User Input Parameters')
+st.sidebar.markdown('Play around with the features and see which flower you get')
+name = st.sidebar.text_input("First name")
+date = st.sidebar.date_input("When did you get activated")
+genre = st.sidebar.radio("What's your favorite movie genre",packages.keys())
